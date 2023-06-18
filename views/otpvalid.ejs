@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP AUTHENTICATION</title>
+</head>
+<body>
+    <form action="/validotp" method="post">
+        <p>enter your OTP</p>
+        <input type="email" name="email" value="<%=email%>" readonly><br>
+        <input type="number" name="otp" id="">
+        <button type="submit">submit</button>
+        
+    </form>
+    <p>time left=<span id="otptiming"></span></p>
+    <% var endtiming=endtime %>
+    <script>
+        let curtime=new Date().getTime()
+        let endtime=<%= new Date(endtiming).getTime() %>
+        console.log(endtime)
+        var time=setInterval(function(){
+            let nowcurtime=new Date().getTime()
+            let distance=endtime-nowcurtime
+            let minute=Math.floor((distance%(1000*60*60))/(1000*60))
+            let second=Math.floor((distance%(1000*60))/1000)
+            document.getElementById("otptiming").innerHTML=minute+" minute "+second+" second "
+            if (distance<0) {
+                clearInterval(time)
+                document.getElementById("otptiming").innerHTML="expired"   
+            }
+        },1000)
+    </script>
+</body>
+</html>

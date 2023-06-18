@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css" type="text/css">
+    <title>YOUR PROFILE</title>
+</head>
+<body>
+    <%- include('./navbar.ejs') %>
+    <img src="/images/<%=profilepicture%>" alt="profile">
+    <form method="post" action="/imagechange" enctype="multipart/form-data">
+    <p><input type="file" name="file" id="profileimage" accept="" />CHANGE YOUR PROFILE PICTURE</p>
+    <button>CHANGE YOUR PICTURE</button>
+    </form>           
+    <form action="/editprofile" method="post">
+    <p>NAME:<input type="text" name="username" value="<%=name%>"></p>
+    <p>E-mail: <input type="text" name="mail" value="<%=mail%>" readonly></p>
+    <p>Date of birth: <input type="date" name="dob" value="<%=birth%>" max="<%=maxdate%>"></p>
+    <p>Phone number: <input type="number" name="ph" value="<%=phone%>"></p>
+    <button>change your details</button>
+</form> 
+</body>
+</html>
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="/images/fevicon.ico" type="image/x-icon">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASHBOARD</title>
+</head>
+
+<body>
+    <%- include('./navbar.ejs') %>
+    <button><a href="/profile">VIEW YOUR PROFILE PICTURE</a></button>
+    <table>
+        <caption>USER LIST</caption>
+        <thead>
+            <tr>
+                <th>
+                    NAME:
+                </th>
+                <th>
+                    E-mail:
+                </th>
+                <th>
+                    profile picture
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <%userlist.forEach((element,index,array)=>{%>
+                <tr>
+                    <td>
+                        <%=element.name %>
+                    </td>
+                    <td>
+                        <%=element.mail %>
+                    </td>
+                    <td>
+                        <%if(element.profilepicture && element.profilepicture!=""){%>
+                        <img src="/images/<%=element.profilepicture %>" alt="profilepicture" height="75" width="75">
+                        <%}else{%>
+                        <img src="/images/avatar.jpeg" alt="profilepicture" height="75" width="75">
+                        <%}%>
+                    </td>
+                </tr>
+                <%})%>
+        </tbody>
+    </table>
+</body>
+
+</html>

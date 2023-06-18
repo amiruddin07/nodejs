@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHANGE YOUR PASSWORD</title>
+</head>
+<body>
+    <%- include('./navbar.ejs') %>
+    <form action="/changepassword" method="post">
+    <p>ENTER CURRENT PASSWORD: <input type="password" name="curpass" id="eyeview"><img src="/images/eye.jpeg" id="eyeclose" height="35px" width="35px" onclick="showeye()"></p>
+    </p>ENTER NEW PASSWORD: <input type="password" name="newpass" id="eyeview2"><img src="/images/eye.jpeg" id="eyeclose2" height="35px" width="35px" onclick="showeye2()"></p>
+    </p>CONFIRM NEW PASSWORD: <input type="password" name="conpass" id="eyeview3"><img src="/images/eye.jpeg" id="eyeclose3" height="35px" width="35px" onclick="showeye3()"></p>
+    <p><%=confirmmsg%></p>
+    <button >CHANGE PASSWORD!</button>
+</form>
+    <script>
+        function showeye(){
+        var pass=document.getElementById("eyeview")
+        var eye=document.getElementById("eyeclose")
+        if(pass.type=="password"){
+            pass.type="text"
+            eye.src="/images/eyeclose.jpeg"
+        }
+        else{
+            pass.type="password"
+            eye.src="/images/eye.jpeg"
+        }
+    }
+    function showeye2(){
+        var pass=document.getElementById("eyeview2")
+        var eye=document.getElementById("eyeclose2")
+        if(pass.type=="password"){
+            pass.type="text"
+            eye.src="/images/eyeclose.jpeg"
+        }
+        else{
+            pass.type="password"
+            eye.src="/images/eye.jpeg"
+        }
+    }function showeye3(){
+        var pass=document.getElementById("eyeview3")
+        var eye=document.getElementById("eyeclose3")
+        if(pass.type=="password"){
+            pass.type="text"
+            eye.src="/images/eyeclose.jpeg"
+        }
+        else{
+            pass.type="password"
+            eye.src="/images/eye.jpeg"
+        }
+    }
+    </script>
+</body>
+</html>

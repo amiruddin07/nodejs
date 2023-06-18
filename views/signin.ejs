@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="shortcut icon" href="/images/fevicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNIN FORM</title>
+</head>
+<body>
+    <form action="/login" method="post">
+    <p>E-MAIL:</p><input type="email" name="mail">
+    <p>PASSWORD:</p><input type="password" name="pass" id="eyeview"><img src="/images/eye.jpeg" id="eyeclose" height="35px" width="35px" onclick="showeye()">
+
+    <button>SIGN IN</button>
+    </form>
+    <p><%=data%></p>
+    <a href="http://localhost:3000/web">Not signed up?(FOLLOW LINK)</a>
+    <script>
+        function showeye(){
+        var pass=document.getElementById("eyeview")
+        var eye=document.getElementById("eyeclose")
+        if(pass.type=="password"){
+            pass.type="text"
+            eye.src="/images/eyeclose.jpeg"
+        }
+        else{
+            pass.type="password"
+            eye.src="/images/eye.jpeg"
+        }
+    }
+    </script>
+</body>
+</html>

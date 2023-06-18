@@ -1,0 +1,50 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>navbar</title>
+</head>
+<style>
+    nav {
+  background-color: black;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+}
+
+nav ul li a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li a:hover {
+  color: red; /* Change the color on hover */
+}
+#lognav{
+    padding-left: 950px;
+}
+</style>
+<body>
+	 <nav>
+    <ul>
+      <li><a href="/dashboard">DASHBOARD</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="/changepass">CHANGE PASSWORD</a></li>
+      <li><a href="/logout" id="lognav">LOGOUT</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
